@@ -29,6 +29,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'rol'
     ];
 
     /**
@@ -42,6 +43,11 @@ class User extends Authenticatable
         'two_factor_recovery_codes',
         'two_factor_secret',
     ];
+
+    public function isAdmin(): bool {         //isAdmin es un método de gestión de permisos que yo cree
+        // return true;
+        return $this->rol == 'admin';
+    }
 
     /**
      * The accessors to append to the model's array form.

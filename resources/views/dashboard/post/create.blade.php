@@ -11,7 +11,7 @@
 
             @include('dashboard.fragment._errors-form') {{----Muestra los errores del Formulario------}}
 
-            <h1>Create</h1> <br>
+            <h4>Create</h4>
             <form action="{{ route('post.store') }}" method="POST">
 
                 {{--@csrf

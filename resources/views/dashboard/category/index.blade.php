@@ -9,7 +9,7 @@
 
 
             <div class="text-end">
-               <a class="btn btn-primary" href="{{ route('category.create') }}">Create</a>
+               <a class="btn btn-primary my-2" href="{{ route('category.create') }}">Create</a>
             </div>
             <table class="table">
                 <thead>
@@ -31,12 +31,12 @@
                                 <img src="/uploads/categories/{{ $c->image }}" style="width:100px" alt="{{ $c->title }}"><br>
                                 {{ $c->image }}</td>
                             <td>
-                                <a class="btn btn-success" href="{{ route('category.edit', $c->id) }}">Edit</a>
-                                <a class="btn btn-warning" href="{{ route('category.show', $c->id) }}">show</a>
+                                <a class="btn btn-success mt-2" href="{{ route('category.edit', $c->id) }}">Edit</a>
+                                <a class="btn btn-warning mt-2" href="{{ route('category.show', $c->id) }}">show</a>
                                 <form class="inline" action="{{ route("category.destroy", $c->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                    <button class="btn btn-danger mt-2" type="submit">Delete</button>
                                 </form>
                             </td>
                         </tr>

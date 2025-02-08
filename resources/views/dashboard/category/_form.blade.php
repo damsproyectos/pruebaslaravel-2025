@@ -10,6 +10,6 @@
     <input class="form-control" type="file" name="image" value="{{ old('image',$category->image) }}">
 @endif
 
-<button class="btn btn-success" type="submit">Send</button>
+<button class="btn btn-success mt-2" type="submit">Send</button>
 
-<a class="btn btn-secondary" href="{{ route('category.index') }}"><b>Back</b></a>
+<a class="btn btn-secondary mt-2" href="{{ route('category.index') }}"><b>Back</b></a>
