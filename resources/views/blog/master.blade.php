@@ -85,27 +85,26 @@
                     Sidebar end
                 ***********************************-->
 
+                {{-- <div class="container mx-auto px-4 my-4 card card-white"> --}}
+                    {{-- @if (session('status'))   {{--La llave es el status: esto me ayuda mostrar mensajes de una acción---}
+                        <div class="card card-success px-2 py-2 my-3">
+                            {{ session('status') }}
+                        </div>
+                    @endif --}}
+                    {{-- <div class="card card-white"> --}}
+                <div class="container mx-auto">
+                    <!--**********************************
+                        Content body start
+                    ***********************************-->
+                    @yield('content')
+                    <!--**********************************
+                        Content body end
+                    ***********************************-->
+                    {{-- </div> --}}
+                </div> <!----End "container mx-auto"----->
 
-
-                        <div class="container mx-auto px-4 my-4 card card-white">
-                            @if (session('status'))   {{--La llave es el status: esto me ayuda mostrar mensajes de una acción---}}
-                                <div class="card card-success px-2 py-2 my-3">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
-                            {{-- <div class="card card-white"> --}}
-                            <!--**********************************
-                                Content body start
-                            ***********************************-->
-                            @yield('content')
-                            <!--**********************************
-                                Content body end
-                            ***********************************-->
-                            {{-- </div> --}}
-                        </div> <!----End "container mx-auto"----->
-
-                        <!--**********************************
-                    Footer start
+                <!--**********************************
+                Footer start
                 ***********************************-->
                 @include('dashboard.master.footer')
                 <!--**********************************

@@ -3,6 +3,7 @@
 // use App\Http\Controllers\Dashboard\CategoryController;
 // use App\Http\Controllers\Dashboard\PostController;
 
+use App\Http\Controllers\blog\BlogController;
 use App\Http\Middleware\UserAccessDashboardMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +17,9 @@ Route::middleware([
     'verified',
 ])->group(function () {
     // Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // })->name('dashboard');
+    Route::get('', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
 
 // Route::group(['prefix' => 'dashboard'], function () {
@@ -29,10 +31,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth:sanctum', config('
     ]);
 
     // Route::get('/dashboard', function () {
-    Route::get('', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
+});
 
+
+////Blog ////////////////////////////
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('', [BlogController::class, 'index'])->name('blog.index');
+    Route::get('detail/{post}', [BlogController::class, 'show'])->name('blog.show');
 });
 
 
