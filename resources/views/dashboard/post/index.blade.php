@@ -63,8 +63,8 @@
                             </td>
 
                             <td>
-                                <a class="btn btn-success mt-2" href="{{ route('post.show', $p->id) }}">Show</a>
-                                <a class="btn btn-warning mt-2" href="{{ route('post.edit', $p->id) }}">Edit</a>
+                                <a class="btn btn-warning mt-2" href="{{ route('post.show', $p->id) }}">Show</a>
+                                <a class="btn btn-success mt-2" href="{{ route('post.edit', $p->id) }}">Edit</a>
                                 <form class="inline" action="{{ route('post.destroy', $p->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')

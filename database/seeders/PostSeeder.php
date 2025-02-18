@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -24,6 +25,7 @@ class PostSeeder extends Seeder
             // $title = Str::random(10);
             $title = str()->random(10);
             $c = Category::inRandomOrder()->first();
+            $u = User::inRandomOrder()->first();
             Post::create(
                 [
                     'title' => $title,
@@ -32,7 +34,9 @@ class PostSeeder extends Seeder
                     'description' => 'Lorem, ipsum dolor',
                     'content' => 'Lorem, ipsum dolor',
                     'posted' => 'yes',
-                    'category_id'=> $c->id
+                    'category_id'=> $c->id,
+                    // 'user_id' => 1,
+                    'user_id' => $u->id,
                 ]
             );
         }

@@ -87,7 +87,8 @@
 
 
 
-                        <div class="container mx-auto px-4 my-4 card card-white">
+                        {{-- <div class="container mx-auto px-4 my-4 card card-white"> --}}
+                        <div class="container mx-auto px-4 my-4 card">
                             @if (session('status'))   {{--La llave es el status: esto me ayuda mostrar mensajes de una acción---}}
                                 <div class="card card-success px-2 py-2 my-3">
                                     {{ session('status') }}

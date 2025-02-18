@@ -28,12 +28,21 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth:sanctum', config('
     Route::resources([
         'post' => App\Http\Controllers\Dashboard\PostController::class,
         'category' => App\Http\Controllers\Dashboard\CategoryController::class,
+
+        //Roles
+        'role' => App\Http\Controllers\Dashboard\RoleController::class,
+
+        //Permissions
+        'permission' => App\Http\Controllers\Dashboard\PemissionController::class
     ]);
 
     // Route::get('/dashboard', function () {
     // Route::get('', function () {
     //     return view('dashboard');
     // })->name('dashboard');
+
+    //**Asignación de permisos a roles */
+    Route::post('role/assign/permission/{role}', [App\View\Components\Dashboard\role\permission\Manage::class, 'handle'])->name('role.assign.permission');
 });
 
 
@@ -41,7 +50,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth:sanctum', config('
 Route::group(['prefix' => 'blog'], function () {
     Route::get('', [BlogController::class, 'index'])->name('blog.index');
     Route::get('detail/{post}', [BlogController::class, 'show'])->name('blog.show');
+    // Route::get('detail/{id}', [BlogController::class, 'show'])->name('blog.show');
 });
+
 
 
 
